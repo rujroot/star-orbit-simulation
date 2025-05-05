@@ -39,12 +39,12 @@ document.body.appendChild(renderer.domElement);
 // Load skybox images
 const loader = new THREE.CubeTextureLoader();
 const texture = loader.load([
-  './public/stars.png', // right
-  './public/stars.png', // left
-  './public/stars.png', // top
-  './public/stars.png', // bottom
-  './public/stars.png', // front
-  './public/stars.png'  // back
+  '/stars.png', // right
+  '/stars.png', // left
+  '/stars.png', // top
+  '/stars.png', // bottom
+  '/stars.png', // front
+  '/stars.png'  // back
 ]);
 scene.background = texture;
 
