@@ -108,16 +108,16 @@ export function addFolderStar(star) {
     star.mass = star.mass;
     if(!mainOptions.started) setInitialVelocities();
   });
-  folder.add(star, 'massExp', 1, 100).name('Mass Exponent (10^x)').onChange(() => {
+  folder.add(star, 'massExp', 1, 50).name('Mass Exponent (10^x)').onChange(() => {
     star.multiplier = star.multiplier;
     if(!mainOptions.started) setInitialVelocities();
   });
 
   const positionFolder = folder.addFolder('Position');
-  positionFolder.add(star.mesh.position, 'x', -5000, 5000).name('Position X').listen().onChange(() => {
+  positionFolder.add(star.mesh.position, 'x', -100, 100).name('Position X').listen().onChange(() => {
     star.startPosition.x = star.mesh.position.x;
   });
-  positionFolder.add(star.mesh.position, 'z', -5000, 5000).name('Position Z').listen().onChange(() => {
+  positionFolder.add(star.mesh.position, 'z', -100, 100).name('Position Z').listen().onChange(() => {
     star.startPosition.z = star.mesh.position.z;
   });
 
@@ -218,7 +218,7 @@ function setupThreeBodyProblemGUI() {
 }
 
 function setupGalaxyGUI() {
-  modeContollers.add(mainOptions, 'starCount', 100, 1000).name('Number of Stars').onChange(() => {
+  modeContollers.add(mainOptions, 'starCount', 100, 1500).name('Number of Stars').onChange(() => {
     const diff = stars.length - mainOptions.starCount;
     if(diff > 0){
       for(let i = 0; i < diff; ++i){
