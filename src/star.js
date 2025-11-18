@@ -264,9 +264,7 @@ export function setInitialVelocities() {
     if(mainOptions.currentMode === "Galaxy (n-body)") effectiveMass = centralMass;
 
     const speed = Math.sqrt((G * effectiveMass) / distance);
-
     const perp = new THREE.Vector3().crossVectors(r, new THREE.Vector3(0, 1, 0)).normalize();
-
     star.velocity.copy(perp.multiplyScalar(speed / div));
   });
 }
